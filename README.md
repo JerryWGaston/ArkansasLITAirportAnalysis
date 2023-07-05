@@ -11,7 +11,9 @@ The main aim of this project is to develop a specialized Power BI Dashboard that
 
 ## Key Findings:
 - Southwest Airlines Co emerged as the most frequently chosen airline, with a total of 1228 flights recorded between October 2022 and March 2023.
-- American Airlines experienced the longest average departure delay, with an average delay of 15.01 minutes per flight. On the other hand, Southwest Airlines, despite having the highest number of flights, had the shortest departure delay, averaging -0.41 minutes per flight, indicating a tendency to depart earlier than scheduled.
+- American Airlines experienced the longest average arrival delay, with an average delay of 15.01 minutes per flight. On the other hand, Southwest Airlines, despite having the highest number of flights, had the shortest departure delay, averaging -0.41 minutes per flight, indicating a tendency to depart earlier than scheduled.
+- Delta Airlines consistently arrives ahead of schedule with an average delay of just -0.88 minutes per flight, indicating their flights frequently arrived early. On the other hand, American Airlines faced longer arrival delays, with an average delay of 15.01 minutes per flight.
+- Despite a significant number of flights, Southwest Airlines had the shortest departure delay among major carriers at a mere 9.62 minutes per flight. In contrast, American Airlines encountered more challenges in this area, experiencing the longest departure delays with an average of 23.22 minutes per flight.
 - The state of Georgia was the most frequently visited, with a total of 1154 flights recorded to and from the state.
 - December 2022 witnessed the highest number of flights out of the six-month period, with a total of 505 flights. This peak in flight activity during December is likely attributable to the holiday season.
 
@@ -97,7 +99,7 @@ IF(ISFILTERED(lr_airport_data[AIRLINE_NAME]),VALUES(lr_airport_data[AIRLINE_NAME
 RETURN
 
 IF(ISFILTERED(lr_airport_data[AIRLINE_NAME]), "Average length of Departure Delays For:  " & 
-CurrencySelected, "Average length of Depearture Delays for All Airlines")
+CurrencySelected, "Average length of Departure Delays for All Airlines")
 ```
 3. Arrival Delays:
 ```
@@ -143,40 +145,52 @@ The visuals presented depict the dashboards for each airline, showcasing a compr
 
 ### All Airlines
 <p align="center">
-  <img src= " ">
+  <img src= "https://github.com/JerryWGaston/ArkansasLITAirportAnalysis/blob/d1aafc4c18acaf0237c5f53cf0665889772a03e0/images/dashboard%20overview.png">
 </p>
 
-Explanation
+This comprehensive airline dashboard provides an overview of key insights. During the period from October to March, a total of 2,858 flights were recorded. Notably, December stood out with the highest flight volume, reaching a total of 505 flights. Among the airlines, Southwest Airlines operated the most flights during that month. Georgia emerged as the top frequent destination, with Delta Airlines operating a remarkable 981 flights to that state. The average length of arrival delays for all airlines was 2.49 minutes per flight, and the average length of departure delays was 13.12 minutes per flight. 
 
 ### American Airlines Inc. 
 <p align="center">
-  <img src= " ">
+  <img src= "https://github.com/JerryWGaston/ArkansasLITAirportAnalysis/blob/d1aafc4c18acaf0237c5f53cf0665889772a03e0/images/american%20dashboard.png">
 </p>
 
-Explanation
+Focusing specifically on American Airlines, which accounted for 527 out of the total 2,858 flights, the analysis reveals interesting patterns. The airline experienced its peak flight volume in November, contributing 106 flights to the overall tally. Weather-related issues emerged as the most common reason for flight cancellations, with six instances recorded. North Carolina emerged as the top destination for American Airlines, with the airline operating 315 flights to that state. The average length of arrival delays for American Airlines was 15.01 minutes per flight, and the average length of departure delays was 23.22 minutes per flight. American Airlines seems to have the longest arrival delays and departure delays out of the four airlines.
 
 
 ### Delta Airlines Inc. 
 <p align="center">
-  <img src= " ">
+  <img src= "https://github.com/JerryWGaston/ArkansasLITAirportAnalysis/blob/d1aafc4c18acaf0237c5f53cf0665889772a03e0/images/delta%20dashboard.png">
 </p>
 
-Explanation
+Examining the data for Delta Airlines, the airline operated 981 out of the total 2,858 flights, exclusively to Georgia. The majority of Delta Airlines' flights were concentrated in March, totaling 173 flights during that month. Six flights were canceled in total, with two cancellations attributed to weather conditions and four to carrier-related issues. Notably, Delta Airlines boasted an impressive average arrival delay of -0.88 minutes, indicating a tendency for early arrivals. In terms of departure delays, the airline averaged 11.97 minutes.
 
 ### Frontier Airlines Inc. 
 <p align="center">
-  <img src= "">
+  <img src= "https://github.com/JerryWGaston/ArkansasLITAirportAnalysis/blob/d1aafc4c18acaf0237c5f53cf0665889772a03e0/images/frontier%20dashboard.png">
 </p>
 
-Explanation
+Looking at Frontier Airlines, which operated 122 out of the total 2,858 flights, the airline had the fewest flights among all carriers. The peak month for Frontier Airlines was December, with 28 flights recorded. Three flights were canceled, one due to weather conditions and two due to carrier-related issues. Colorado emerged as the top destination for Frontier Airlines, with 63 flights to that location. The average departure delay for the airline was 12.97 minutes, while the average arrival delay was 4.22 minutes.
 
 ### Southwest Airlines Co. 
 <p align="center">
-  <img src= "">
+  <img src= "https://github.com/JerryWGaston/ArkansasLITAirportAnalysis/blob/d1aafc4c18acaf0237c5f53cf0665889772a03e0/images/southwest%20dashboard.png">
 </p>
 
-Explanation
+Lastly, examining Southwest Airlines, which operated 1,228 out of the total 2,858 flights, the data indicates that it was the most utilized airline during the analyzed period. December stood out as the peak month for Southwest Airlines, with a total of 212 flights. The most frequent destination for the airline was Texas, with 528 flights to that state. A total of 55 cancellations were recorded, with 21 attributed to weather conditions, one to national air systems, and 33 to carrier-related issues. Southwest Airlines boasted an average departure delay of 9.62 minutes, while their average arrival delay was -0.41 minutes, implying a tendency for early arrivals.
 
 ## Conclusion
-
 In conclusion...
+- Between October 2022 and March 2023, a total of 2,858 flights were recorded, with American Airlines operating 527 flights, Delta Airlines operating 981 flights, Frontier Airlines operating 122 flights, and Southwest Airlines operating 1,228 flights.
+- The average length of arrival delays across all airlines was 2.49 minutes. American Airlines had the longest average arrival delays, averaging 15.01 minutes, while Delta Airlines boasted the shortest average arrival delays, averaging -0.88 minutes.
+- American Airlines had the longest average departure delays, averaging 23.22 minutes per flight, while Southwest Airlines had the shortest average departure delays, averaging 9.62 minutes per flight.
+- Out of all the airlines, 373 arrival delays exceeded 15 minutes, with Southwest Airlines experiencing the highest number of delays, totaling 132 delayed flights. On the other hand, Frontier Airlines had the fewest arrival delays, with a total of 26 delayed flights. It's worth noting that the lower number of delays for Frontier Airlines may be attributed to its lower flight volume.
+- Similarly, there were 413 departure delays exceeding 15 minutes, with Southwest Airlines facing the highest number of delays, totaling 157 delayed flights. Frontier Airlines had the fewest departure delays, with a total of 29 delayed flights. It should be considered that Frontier Airlines operated fewer flights overall.
+- Georgia emerged as the most frequently visited state, with a total of 1,154 flights to that destination. Delta Airlines operated 981 flights to Georgia, while Southwest Airlines operated 173 flights to the same state.
+- The number of flights per month between October 2022 and March 2023 varied, with October having 494 flights, November having 502 flights, December having 505 flights, January having 471 flights, February having 427 flights, and March having 459 flights. December had the highest number of flights, followed by November.
+- A total of 73 flights were canceled during the analyzed period. The majority of cancellations were due to carrier-related reasons (42 flights), followed by weather-related reasons (30 flights), and one cancellation due to national air systems.
+- Based on the available data, Southwest Airlines appeared to be the most favored and preferred airline among the four airlines analyzed.
+
+If you want to follow along with what I did, feel free to download the datasets, the queries, and the Power BI dashboard to see more in-depth dashboard creations. 
+
+** This dashboard will be updated as I learn new Power BI features, to provide clarification, interesting insights, and dashboard designs **
